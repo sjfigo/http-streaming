@@ -37,7 +37,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        test-type: ${{fromJson(needs.test-type-matrix.outputs.test-type)}}
+        test-type: ${{fromJson(needs.test-type-matrix.outputs.test-type-fork)}}
     env:
       BROWSER_STACK_USERNAME: ${{secrets.BROWSER_STACK_USERNAME}}
       BROWSER_STACK_ACCESS_KEY: ${{secrets.BROWSER_STACK_ACCESS_KEY}}
