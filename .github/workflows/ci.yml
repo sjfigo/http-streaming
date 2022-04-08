@@ -26,7 +26,7 @@ jobs:
         run: echo '::set-output name=test_type::["unit", "coverage"]'
       - id: test-type
         if: ${{!github.event.pull_request.head.repo.fork}}
-        run: echo '::set-output name=test_type::["unit", "playback", "playback-min", "coverage"]'
+        run: echo '::set-output name=test_type::["unit", "coverage"]'
 
 
   ci:
@@ -41,7 +41,7 @@ jobs:
     env:
       BROWSER_STACK_USERNAME: ${{secrets.BROWSER_STACK_USERNAME}}
       BROWSER_STACK_ACCESS_KEY: ${{secrets.BROWSER_STACK_ACCESS_KEY}}
-      CI_TEST_TYPE: ${{matrix.test-type-fork}}
+      CI_TEST_TYPE: ${{matrix.test-type}}
     runs-on: ${{matrix.os}}
     steps:
     - name: checkout code
