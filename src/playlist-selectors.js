@@ -42,7 +42,8 @@ const safeGetComputedStyle = function(el, property) {
   if (!result) {
     return '';
   }
-  result[property] = '9999px';
+  console.log('http-streaming - playlist-selectors - safeGetComputedStyle: el=' + el + ', property=' + property + ', result[property]=' + result[property]);
+
   return result[property];
 };
 
