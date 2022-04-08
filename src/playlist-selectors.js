@@ -42,7 +42,7 @@ const safeGetComputedStyle = function(el, property) {
   if (!result) {
     return '';
   }
-  console.log('http-streaming - playlist-selectors - safeGetComputedStyle: el=' + el + ', property=' + property + ', result[property]=' + result[property]);
+  logFn(`safeGetComputedStyle: el=${el}, property=${property}, result[property]=${result[property]}`);
 
   return result[property];
 };
